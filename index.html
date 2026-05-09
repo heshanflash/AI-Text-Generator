@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyForge - AI Text Humanizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <h1 class="logo">Study<span class="highlight">Forge</span></h1>
+      <p class="tagline">Paste your AI-generated text below to humanize it and bypass detection</p>
+    </header>
+
+    <main class="main">
+      <div class="layout-two-col">
+
+        <div class="left-col">
+
+          <!-- Paste Your Text -->
+          <section class="card">
+            <div class="card-header">
+              <h2>📝 Paste Your Text</h2>
+              <p>Copy and paste your AI-generated or raw text here, then click Humanize.</p>
+            </div>
+            <div class="form-group full-width">
+              <label for="inputText">Input Text</label>
+              <textarea id="inputText" rows="10" placeholder="Paste your text here..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button id="humanizeBtn" class="btn btn-primary">
+                <span class="btn-icon">&#9889;</span> Humanize Text
+              </button>
+              <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+          </section>
+
+          <!-- Advanced Humanization Controls -->
+          <section class="card humanization-card">
+            <div class="card-header">
+              <h2>🛡️ Advanced Humanization Controls</h2>
+              <p>Fine-tune how the humanizer makes your text appear natural and undetectable.</p>
+            </div>
+            <div class="humanization-controls">
+              <div class="control-item">
+                <label class="toggle-label">Enable Humanization</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="humanizationToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <label class="toggle-label">Add Grammatical Quirks</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="quirksToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <label class="toggle-label">Vary Sentence Length (Burstiness)</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="burstinessToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <label class="toggle-label">Add Personal Touches</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="personalToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <label class="toggle-label">Intersperse Transitions</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="transitionsToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <label class="toggle-label">Simulate Typing Errors</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="errorsToggle" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="control-item full-width">
+                <label class="range-label" for="humanLevelSlider">Humanization Intensity: <span id="humanLevelValue">Normal (50%)</span></label>
+                <input type="range" id="humanLevelSlider" min="0" max="100" value="50" class="range-slider">
+                <div class="range-marks">
+                  <span>Subtle</span>
+                  <span>Normal</span>
+                  <span>Extreme</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="right-col">
+
+          <!-- Output Section -->
+          <section class="output-section" id="outputSection" style="display: none;">
+            <div class="card output-card">
+              <div class="card-header">
+                <h2>✏️ Humanized Text</h2>
+                <div class="output-meta">
+                  <span id="wordCount">0 words</span>
+                  <span id="charCount">0 characters</span>
+                </div>
+              </div>
+              <div class="output-box" id="outputBox">
+                <p class="placeholder-text">Your humanized text will appear here...</p>
+              </div>
+              <div class="output-actions">
+                <button id="copyBtn" class="btn btn-icon-only" title="Copy to clipboard">
+                  <span>&#128203;</span> Copy
+                </button>
+                <button id="downloadBtn" class="btn btn-icon-only" title="Download as TXT">
+                  <span>&#128190;</span> Download
+                </button>
+                <button id="improveBtn" class="btn btn-primary" title="Improve humanization">
+                  <span>&#127775;</span> Improve Further
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tips -->
+          <section class="card tips-card">
+            <div class="card-header">
+              <h2>💡 Quick Tips</h2>
+            </div>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <span class="tip-num">1</span>
+                <p><b>Paste raw AI text</b> into the input box and click Humanize.</p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-num">2</span>
+                <p><b>Toggle controls</b> to customize the humanization style you want.</p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-num">3</span>
+                <p><b>Adjust intensity</b> with the slider — higher means more aggressive changes.</p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-num">4</span>
+                <p><b>Click "Improve Further"</b> to run another pass if the text still feels robotic.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>StudyForge &copy; 2026 — Built for Students</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
