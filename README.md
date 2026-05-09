@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/heshanflash/AI-Text-Generator/main/preview.png" alt="StudyForge Banner" width="100%"/>
+<img src="[https://raw.githubusercontent.com/heshanflash/AI-Text-Generator/main/preview.png](https://as2.ftcdn.net/v2/jpg/08/00/40/73/1000_F_800407388_lrcVUTH5bxJfLZECnYufRbR8RWSgWTkI.jpg)" alt="StudyForge Banner" width="100%"/>
 
 # ⚡ StudyForge — AI Text Humanizer
 
